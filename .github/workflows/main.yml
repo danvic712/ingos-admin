@@ -23,6 +23,19 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
       # First install required dependencies to build app
       - name: Install dependencies
@@ -30,4 +43,4 @@ jobs:
 
       # Use angular-cli-ghpages to deploy app
       - name: Deploy app
-        run: npm run ng deploy --base-href=/ingos-admin/
+        run: npm run build:ci
