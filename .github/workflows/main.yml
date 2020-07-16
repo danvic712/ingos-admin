@@ -44,7 +44,7 @@ jobs:
         
       # Show Angular CLI information
       - name: Display Angular CLI Info
-        run: ng version      
+        run: npm run ng version      
 
       # Use angular-cli-ghpages to deploy app
       - name: Deploy app
