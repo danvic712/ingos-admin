@@ -30,4 +30,4 @@ jobs:
 
       # Use angular-cli-ghpages to deploy app
       - name: Deploy app
-        run: ng deploy --base-href=/ingos-admin/
+        run: npm run ng deploy --base-href=/ingos-admin/
