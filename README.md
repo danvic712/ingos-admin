@@ -1,4 +1,5 @@
-# IngosAdmin
+# ingos-admin
+![Deploy Github Pages](https://github.com/Lanesra712/ingos-admin/workflows/Deploy%20Github%20Pages/badge.svg?branch=master)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
 
