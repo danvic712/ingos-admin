@@ -6,13 +6,10 @@ name: Deploy Github Pages
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  restore:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -45,8 +42,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+  deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
       # Use angular-cli-ghpages to deploy app
-      - name: Deploy app
+      - name: Deploy to github pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run build:ci
+        run: npm run deploy
+    needs: restore
