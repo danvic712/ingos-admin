@@ -13,6 +13,10 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { zh_CN } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
+import { PermissionsModule } from './pages/permissions/permissions.module';
+import { LogsModule } from './pages/logs/logs.module';
+import { ConfigurationsModule } from './pages/configurations/configurations.module';
+import { SettingsModule } from './pages/settings/settings.module';
 
 registerLocaleData(zh);
 
@@ -28,7 +32,11 @@ registerLocaleData(zh);
     NzMenuModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PermissionsModule,
+    LogsModule,
+    ConfigurationsModule,
+    SettingsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
