@@ -28,6 +28,22 @@
   color: #1890ff;
 }
 
+.navbar-menu{
+  float: right;
+  font-size: 20px;
+  padding-right: 24px;
+}
+
+.dropdown-menu{
+  span{
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+.dropdown-menu:hover{
+  color: #1890ff;
+}
+
 .sidebar-logo {
   position: relative;
   height: 64px;
