@@ -11,23 +11,26 @@
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Welcome</a>
+            <a routerLink="/dashboard/analysis">分析页</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>Monitor</a>
+            <a routerLink="/dashboard/monitor">驾驶舱</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
+            <a routerLink="/dashboard/workplace">工作台</a>
           </li>
         </ul>
       </li>
-      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+      <li nz-submenu nzOpen nzTitle="表单页" nzIcon="form">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a>表单清单</a>
+            <a>基础表单</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>行为配置</a>
+            <a>分布表单</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>高级表单</a>
           </li>
         </ul>
       </li>
@@ -43,10 +46,25 @@
 
         <!-- 顶部右侧菜单 -->
         <div class="navbar-menu">
-          <a class="dropdown-menu">
-            <nz-avatar nzIcon="user"></nz-avatar>
-            <span>Administer</span>
-          </a>
+          <span class="navbar-menu-item" (mouseenter)="controlAvatarMenu(true)" (mouseleave)="controlAvatarMenu(false)">
+            <a nz-dropdown [nzDropdownMenu]="menu" [nzVisible]="showAvatarMenu">
+              <nz-avatar nzIcon="user" class="navbar-avatar-image" [nzShape]="'square'"></nz-avatar>
+              <span class="navbar-avatar-account">Administer</span>
+            </a>
+            <nz-dropdown-menu #menu="nzDropdownMenu">
+              <ul nz-menu>
+                <li nz-menu-item>
+                  <i nz-icon nzType="user" nzTheme="outline"></i>
+                  个人中心
+                </li>
+                <li nz-menu-divider></li>
+                <li nz-menu-item>
+                  <i nz-icon nzType="logout" nzTheme="outline"></i>
+                  退出登录
+                </li>
+              </ul>
+            </nz-dropdown-menu>
+          </span>
         </div>
       </div>
     </nz-header>

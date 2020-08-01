@@ -28,20 +28,54 @@
   color: #1890ff;
 }
 
-.navbar-menu{
+.navbar-menu {
+  display: flex;
   float: right;
-  font-size: 20px;
-  padding-right: 24px;
+  height: 64px;
+  margin-left: auto;
+  margin-right: 15px;
+  overflow: hidden
 }
 
-.dropdown-menu{
-  span{
-    font-size: 14px;
-    padding: 10px;
-  }
+.navbar-menu:focus {
+  outline: none
 }
-.dropdown-menu:hover{
+
+.navbar-menu-item {
+  display: inline-block;
+  padding: -5px 8px;
+  margin: 0px 10px;
+  height: 100%;
+  font-size: 14px;
+  color: #5a5e66 !important;
+  vertical-align: text-bottom
+}
+
+.navbar-menu-item:hover {
+  cursor: pointer;
+  background: hsla(0, 0%, 100%, .85);
+  -webkit-transition: background .3s;
+  transition: background .3s
+}
+
+.navbar-avatar-image {
+  margin: 0px 5px 0px 0px;
   color: #1890ff;
+  vertical-align: middle;
+  background: hsla(0, 0%, 100%, .85)
+}
+
+.navbar-avatar-account {
+  display: inline-block;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -.125em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
 }
 
 .sidebar-logo {
@@ -66,9 +100,11 @@
   margin: 0 0 0 20px;
   color: #fff;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
   font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
   vertical-align: middle;
+  height: 32px;
+  line-height: 32px;
 }
 
 nz-header {
